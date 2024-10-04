@@ -119,4 +119,14 @@ public class Calculator {
         }
         return result;
     }
+
+    public double computeAreaCircle(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    //HW3.1L: Попробуйте реализовать в калькуляторе с помощью методологии TDD (с описанием шагов) функцию расчета длины окружности
+    // P=2πR
+    public double computeLengthCircle(int r) {
+        return 2*Math.PI*r;
+    }
 }

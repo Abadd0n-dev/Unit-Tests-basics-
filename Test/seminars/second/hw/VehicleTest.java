@@ -6,52 +6,50 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class VehicleTest {
     @Test
-    void carIsInstanceOfVehicle() {
-        Car car = new Car("Toyota", "Camry", 2020);
-        assertTrue(car instanceof Vehicle, "экземпляр объекта Car является экземпляром транспортного средства");
+    public void testCarIsInstanceOfVehicle() {
+        Car car = new Car("Dodge", "Ram", 2010);
+        assertTrue(car instanceof Vehicle);
     }
 
     @Test
-    void carShouldHaveFourWheels() {
-        Car car = new Car("Toyota", "Camry", 2020);
-        assertEquals(4, car.getNumWheels(), "объект Car создается с 4-мя колесами.");
+    public void testCarHasFourWheels() {
+        Car car = new Car("Honda", "Civic", 2006);
+        assertEquals(car.getNumWheels(), 4);
     }
 
     @Test
-    void motorcycleShouldHaveTwoWheels() {
-        Motorcycle motorcycle = new Motorcycle("Honda", "CBR", 2021);
-        assertEquals(2, motorcycle.getNumWheels(), "объект Motorcycle создается с 2-мя колесами");
+    public void testMotorcycleHasTwoWheels() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Bolt", 2017);
+        assertEquals(motorcycle.getNumWheels(), 2);
     }
 
     @Test
-    void carTestDriveShouldSetSpeedTo60() {
-        Car car = new Car("Toyota", "Camry", 2020);
+    public void testCarSpeed() {
+        Car car = new Car("Honda", "Civic", 2012);
         car.testDrive();
-        assertEquals(60, car.getSpeed(), "объект Car развивает скорость 60 в режиме тестового вождения");
+        assertEquals(car.getSpeed(), 60);
     }
 
     @Test
-    void motorcycleTestDriveShouldSetSpeedTo75() {
-        Motorcycle motorcycle = new Motorcycle("Honda", "CBR", 2021);
+    public void testMotorcycleSpeed() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Bolt", 2017);
         motorcycle.testDrive();
-        assertEquals(75, motorcycle.getSpeed(), "объект Motorcycle развивает скорость 75 в режиме тестового вождения");
+        assertEquals(motorcycle.getSpeed(), 75);
     }
 
     @Test
-    void carShouldStopWhenParked() {
-        Car car = new Car("Toyota", "Camry", 2020);
+    public void testCarPark() {
+        Car car = new Car("Honda", "Civic", 2012);
         car.testDrive();
-        assertEquals(60, car.getSpeed(), "Скорость автомобиля должна быть 60 после тест-драйва.");
         car.park();
-        assertEquals(0, car.getSpeed(), "Автомобиль должен остановиться после парковки.");
+        assertEquals(car.getSpeed(), 0);
     }
 
     @Test
-    void motorcycleShouldStopWhenParked() {
-        Motorcycle motorcycle = new Motorcycle("Honda", "CBR", 2021);
+    public void testMotorcyclePark() {
+        Motorcycle motorcycle = new Motorcycle("Yamaha", "Bolt", 2017);
         motorcycle.testDrive();
-        assertEquals(75, motorcycle.getSpeed(), "Скорость мотоцикла должна быть 75 после тест-драйва.");
         motorcycle.park();
-        assertEquals(0, motorcycle.getSpeed(), "Мотоцикл должен остановиться после парковки.");
+        assertEquals(motorcycle.getSpeed(), 0);
     }
 }

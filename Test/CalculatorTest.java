@@ -9,8 +9,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -117,7 +116,7 @@ public class CalculatorTest {
 
     // <-------JUnit-Jupiter-Params
     @ParameterizedTest
-    @ValueSource(chars = { '&', '#', '=' })
+    @ValueSource(chars = {'&', '#', '='})
     void expectedIllegalStateExpressionToo(char i) {
         // Arrange
         Calculator calculator = new Calculator();
@@ -133,6 +132,7 @@ public class CalculatorTest {
         String actualMessage = exception.getMessage();
 
         assertEquals(expectedMessage, actualMessage);
+
     }
 
     @Test
@@ -161,5 +161,20 @@ public class CalculatorTest {
                 .describedAs("Input error");
         System.setIn(inputStream);
         System.setOut(null);
+    }
+
+    @Test
+    void computeAreaCircle() {
+        Calculator calculator = new Calculator();
+        assertEquals(314.1592653589793, calculator.computeAreaCircle(10), "Should return right circle area");
+    }
+
+    //HW3.1L: Попробуйте реализовать в калькуляторе с помощью методологии TDD (с описанием шагов) функцию расчета длины окружности
+    // P=2πR
+    @Test
+    void computeLengthCircle() {
+        Calculator calculator = new Calculator();
+         assertThat(calculator.computeLengthCircle(10)).isEqualTo(62.83185307179586);
+         assertTrue(Math.abs(62 - calculator.computeLengthCircle(10)) < 1);
     }
 }

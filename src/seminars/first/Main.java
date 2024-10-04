@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*; // Импортируем классы библиотеки assertJ
 
 public class Main {
 
