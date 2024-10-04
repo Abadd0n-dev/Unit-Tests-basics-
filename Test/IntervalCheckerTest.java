@@ -1,5 +1,3 @@
-package seminars;
-
 import org.junit.jupiter.api.Test;
 import seminars.third.hw.IntervalChecker;
 import static org.junit.jupiter.api.Assertions.*;
