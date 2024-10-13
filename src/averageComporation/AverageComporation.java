@@ -1,4 +1,4 @@
-package averageComporation.main.java.avaragecomporation;
+package averageComporation;
 
 import java.util.List;
 public class AverageComporation {

@@ -1,4 +1,4 @@
-package averageComporation.main.java.avaragecomporation;
+package averageComporation;
 
 import java.util.Arrays;
 import java.util.List;
